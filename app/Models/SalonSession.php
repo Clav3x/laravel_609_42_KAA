@@ -21,4 +21,9 @@ class SalonSession extends Model
         return $this->belongsToMany(Service::class, 'rendered_services', 'session_id', 'service_id')
                     ->withPivot('actual_price');
     }
+    public function beautician()
+    {
+        return $this->belongsTo(User::class, 'beautician_id');
+    }
+
 }

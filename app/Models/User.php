@@ -40,4 +40,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(SalonSession::class, 'client_id');
     }
+    public function clientSessions()
+    {
+        return $this->hasMany(SalonSession::class, 'client_id');
+    }
+    public function beauticianSessions()
+    {
+        return $this->hasMany(SalonSession::class, 'beautician_id');
+    }
 }

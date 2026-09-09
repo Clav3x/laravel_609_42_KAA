@@ -6,8 +6,9 @@
 </head>
 <body>
     <h1>Сеанс №{{ $session->id }}</h1>
-    <p>Клиент: {{ $session->client->full_name }}</p>
-    <p>Время: {{ $session->start_time }} — {{ $session->end_time }}</p>
+    <p><strong>Клиент:</strong> {{ $session->client->full_name }}</p>
+    <p><strong>Косметолог:</strong> {{ $session->beautician->full_name }}</p>
+    <p><strong>Время:</strong> {{ $session->start_time }} — {{ $session->end_time }}</p>
 
     <h2>Оказанные услуги:</h2>
     <ul>
