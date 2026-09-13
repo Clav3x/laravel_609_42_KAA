@@ -36,10 +36,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function sessions()
-    {
-        return $this->hasMany(SalonSession::class, 'client_id');
-    }
     public function clientSessions()
     {
         return $this->hasMany(SalonSession::class, 'client_id');

@@ -11,6 +11,8 @@ class SalonSession extends Model
 
     protected $table = 'salon_sessions';
 
+    protected $fillable = ['client_id', 'beautician_id', 'start_time', 'end_time'];
+
     public function client()
     {
         return $this->belongsTo(User::class, 'client_id');
@@ -21,9 +23,9 @@ class SalonSession extends Model
         return $this->belongsToMany(Service::class, 'rendered_services', 'session_id', 'service_id')
                     ->withPivot('actual_price');
     }
+
     public function beautician()
     {
         return $this->belongsTo(User::class, 'beautician_id');
     }
-
 }
