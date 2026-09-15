@@ -9,12 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class SalonSessionController extends Controller
 {
-    public function index()
-    {
-        return view('sessions', [
-            'sessions' => SalonSession::all()
-        ]);
-    }
+    public function index(Request $request)
+{
+    $perpage = $request->perpage ?? 2;
+    return view('sessions', [
+        'sessions' => SalonSession::paginate($perpage)->withQueryString()
+    ]);
+}
 
     public function show($id)
     {

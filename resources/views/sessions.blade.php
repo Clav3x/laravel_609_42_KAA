@@ -29,5 +29,6 @@
             </tr>
         @endforeach
     </table>
+    {{ $sessions->links() }}
 </body>
 </html>
